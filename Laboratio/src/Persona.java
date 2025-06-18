@@ -1,14 +1,14 @@
 
 public class Persona {
-    
+
     private String nombre;
     private String apellido;
-    private String usuarionombre;
+    private String usuarioNombre;
 
-    public Persona(String nombre, String apellido, String usuarionombre) {
+    public Persona(String nombre, String apellido, String usuarioNombre) {
         this.nombre = nombre;
         this.apellido = apellido;
-        this.usuarionombre = usuarionombre;
+        this.usuarioNombre = usuarioNombre;
     }
 
     public String getNombre() {
@@ -19,26 +19,25 @@ public class Persona {
         return apellido;
     }
 
-    public String getUsuarionombre() {
-        return usuarionombre;
+    public String getUsuarioNombre() {
+        return usuarioNombre;
     }
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
-    public void setApellido(String apellidoh) {
-        this.apellido = apellidoh;
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
     }
 
-    public void setUsuarionombre(String usuarionombre) {
-        this.usuarionombre = usuarionombre;
+    public void setUsuarioNombre(String usuarioNombre) {
+        this.usuarioNombre = usuarioNombre;
     }
 
     @Override
     public String toString() {
-        
         return String.format("  Nombre: %s\n  Apellidos: %s\n  Usuario: %s",
-                getNombre(), getApellido(), getUsuarionombre());
+                getNombre(), getApellido(), getUsuarioNombre());
     }
 }

@@ -1,10 +1,10 @@
 
 public class InstitucionEducativa {
-    
+
     private String nombre;
     private String siglas;
 
-    public InstitucionEducativa(String nombree, String siglass) {
+    public InstitucionEducativa(String nombre, String siglas) {
         this.nombre = nombre;
         this.siglas = siglas;
     }
@@ -17,17 +17,17 @@ public class InstitucionEducativa {
         return siglas;
     }
 
-    public void setNombre(String nombree) {
-        this.nombre = nombree;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
-    public void setSiglas(String siglass) {
-        this.siglas = siglass;
+    public void setSiglas(String siglas) {
+        this.siglas = siglas;
     }
 
     @Override
     public String toString() {
-        return String.format("  Nombre Institucion: %s\n  Siglas: %s",
+        return String.format("  Nombre Institución: %s\n  Siglas: %s",
                 getNombre(), getSiglas());
     }
 }

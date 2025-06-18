@@ -5,36 +5,33 @@ public class PrestamoAutomovil extends Prestamo {
     private String marcaAutomovil;
     private Persona garante1;
     private double valorAutomovil;
-    private double valorMensualPagooPrestamoAutomovil;
+    private double valorMensualPagoPrestamoAutomovil;
 
-    public PrestamoAutomovil(Persona benificiario, int tiempoPrestamoMesess, String ciuddadPrestamo,
+    public PrestamoAutomovil(Persona beneficiario, int tiempoPrestamoMeses, String ciudadPrestamo,
             String tipoAutomovil, String marcaAutomovil, Persona garante1, double valorAutomovil) {
-        
-        super(benificiario, tiempoPrestamoMesess, ciuddadPrestamo);
-        
+
+        super(beneficiario, tiempoPrestamoMeses, ciudadPrestamo);
+
         this.tipoAutomovil = tipoAutomovil;
         this.marcaAutomovil = marcaAutomovil;
         this.garante1 = garante1;
         this.valorAutomovil = valorAutomovil;
-        
-        calcularValorMensualPagooPrestamoAutomovil();
-        setciudadprestamo(ciuddadPrestamo);
+
+        calcularValorMensualPagoPrestamoAutomovil();
+        setCiudadPrestamo(ciudadPrestamo);
     }
 
-    public void calcularValorMensualPagooPrestamoAutomovil() {
-        
-        if (tprestamomeses > 0) {
-            
-            this.valorMensualPagooPrestamoAutomovil = valorAutomovil / tprestamomeses;
-            
+    public void calcularValorMensualPagoPrestamoAutomovil() {
+        if (tiempoPrestamoMeses > 0) {
+            this.valorMensualPagoPrestamoAutomovil = valorAutomovil / tiempoPrestamoMeses;
         } else {
-            
-            this.valorMensualPagooPrestamoAutomovil = 0;
+            this.valorMensualPagoPrestamoAutomovil = 0;
         }
     }
 
-    public void setciudadprestamo(String ciuddadPrestamo) {
-        this.ciudadprestamo = ciuddadPrestamo.toLowerCase();
+    @Override
+    public void setCiudadPrestamo(String ciudadPrestamo) {
+        this.ciudadPrestamo = ciudadPrestamo.toLowerCase();
     }
 
     public String getTipoAutomovil() {
@@ -53,8 +50,9 @@ public class PrestamoAutomovil extends Prestamo {
         return valorAutomovil;
     }
 
-    public double getValorMensualPagooPrestamoAutomovil() {
-        return valorMensualPagooPrestamoAutomovil;
+    @Override
+    public double getValorMensualPago() {
+        return valorMensualPagoPrestamoAutomovil;
     }
 
     public void setTipoAutomovil(String tipoAutomovil) {
@@ -71,25 +69,20 @@ public class PrestamoAutomovil extends Prestamo {
 
     public void setValorAutomovil(double valorAutomovil) {
         this.valorAutomovil = valorAutomovil;
-        
-        calcularValorMensualPagooPrestamoAutomovil();
+        calcularValorMensualPagoPrestamoAutomovil();
     }
 
     @Override
     public String toString() {
-
         return String.format("%s\n"
-                
-                + "--- Detalles Prestamo Automovill ---\n"
-                + "Tipo de Automovil: %s\n"
-                + "Marca Automovil: %s\n"
+                + "--- Detalles Préstamo Automóvil ---\n"
+                + "Tipo de Automóvil: %s\n"
+                + "Marca Automóvil: %s\n"
                 + "Garante 1:\n%s\n"
-                + "Valor Automovil: %.2f\n"
+                + "Valor Automóvil: %.2f\n"
                 + "Valor Mensual Pago: %.2f",
-                
                 super.toString(),
-                
                 getTipoAutomovil(), getMarcaAutomovil(), getGarante1(),
-                getValorAutomovil(), getValorMensualPagooPrestamoAutomovil());
+                getValorAutomovil(), getValorMensualPago());
     }
 }
